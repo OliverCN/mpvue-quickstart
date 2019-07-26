@@ -1,6 +1,11 @@
 {
   "pages": [
-    "pages/index",{{#vuex}}
+    {
+      "path": "pages/index",
+      "config": {
+        "navigationBarTitleText": "{{name}}"
+      }
+    },{{#vuex}}
     "pages/counter",{{/vuex}}
     {
       "path": "packageA/logs",
@@ -12,5 +17,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  }{{#vant}},
+  "usingComponents": {
+    "van-tag": "/vant-weapp/dist/tag/index"
+  }{{/vant}}
 }

@@ -18,15 +18,14 @@ $ npm run dev
 
 * 移除 express 等无关依赖
 * 引入 mpvue-entry，移除冗余的 main.js 文件
-* 引入 mpvue-config-loader，支持在 vue 文件中书写页面配置
 * 引入 mpvue-router-patch，支持使用类 vue-router 的 api 
 * 引入 vant-weapp，全局配置原生组件库，快速搭建页面
 * 支持官方分包（mpvue-loader@^1.1.0），简化配置方式
+* 支持 standard 及 airbnb 两种默认 eslint 配置
 
 ## 详细文档请查阅
 
 * [quickstart](http://mpvue.com/mpvue/quickstart)
 * [mpvue-entry](https://github.com/F-loat/mpvue-entry)
-* [mpvue-config-loader](https://github.com/F-loat/mpvue-config-loader)
 * [mpvue-router-patch](https://github.com/F-loat/mpvue-router-patch)
 * [vant-weapp](https://youzan.github.io/vant-weapp)

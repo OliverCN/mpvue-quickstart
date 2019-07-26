@@ -14,10 +14,6 @@
 import { mapState, mapMutations } from 'vuex'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default {
-  config: {
-    navigationBarTitleText: 'Vuex示例'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  },
-
   computed: {
     ...mapState([
       'count'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}

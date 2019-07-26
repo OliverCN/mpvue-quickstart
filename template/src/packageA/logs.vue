@@ -13,10 +13,6 @@ import { formatTime } from '@/utils/index'{{#if_eq lintConfig "airbnb"}};{{/if_e
 import card from '@/components/card'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default {
-  config: {
-    navigationBarTitleText: '查看启动日志'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  },
-
   components: {
     card{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   },

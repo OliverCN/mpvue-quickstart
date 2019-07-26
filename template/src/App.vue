@@ -1,12 +1,5 @@
 <script>
 export default {
-  {{#vant}}
-  globalConfig: {
-    usingComponents: {
-      'van-tag': 'vant-weapp/dist/tag/index'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  },
-  {{/vant}}
   created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync('logs') || []{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
