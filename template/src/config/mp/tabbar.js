@@ -1,19 +1,19 @@
 module.exports = [
   {
     text: "首页",
-    pagePath: "views/index",
+    pagePath: "pages/index",
     iconPath: "static/img/tabs/car.png",
     selectedIconPath: "static/img/tabs/car@selected.png"
   },
   {
     text: "发布",
-    pagePath: "views/pub",
+    pagePath: "pages/pub",
     iconPath: "static/img/tabs/pub.png",
     selectedIconPath: "static/img/tabs/add@selected.png"
   },
   {
     text: "我的",
-    pagePath: "views/center",
+    pagePath: "pages/center",
     iconPath: "static/img/tabs/mine.png",
     selectedIconPath: "static/img/tabs/mine@selected.png"
   }

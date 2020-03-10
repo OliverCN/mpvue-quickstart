@@ -6,7 +6,7 @@
  * @Description: ""
  */
 module.exports = [
-  "views/index",
-  "views/pub",
-  "views/center"
+  "pages/index",
+  "pages/pub",
+  "pages/center"
 ]
