@@ -8,7 +8,7 @@ module.exports = [
   {
     text: "发布",
     pagePath: "pages/pub",
-    iconPath: "static/images/tabs/pub.png",
+    iconPath: "static/images/tabs/add.png",
     selectedIconPath: "static/images/tabs/add@selected.png"
   },
   {
