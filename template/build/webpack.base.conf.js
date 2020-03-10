@@ -110,8 +110,8 @@ module.exports = {
     ]){{#vant}},
     new CopyWebpackPlugin([
       {
-        from: resolve('node_modules/vant-weapp/dist'),
-        to: resolve('dist/vant-weapp/dist'),
+        from: resolve('node_modules/@vant/weapp/dist'),
+        to: resolve('dist/vant/dist'),
         ignore: ['.*']
       }
     ]){{/vant}}

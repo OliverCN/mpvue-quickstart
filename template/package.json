@@ -11,11 +11,12 @@
     "lint": "eslint --ext .js,.vue src"{{/lint}}
   },
   "dependencies": {
+    {{#vant}}
+    "@vant/weapp": "^1.0.7"{{/vant}},
     "dayjs": "^1.8.21",
-    "mpvue": "^2.0.0"{{#router}},
     "qs": "^6.9.1",
-    "mpvue-router-patch": "^2.0.0"{{/router}}{{#vant}},
-    "vant-weapp": "^0.5.0"{{/vant}}{{#vuex}},
+    "mpvue": "^2.0.0"{{#router}},
+    "mpvue-router-patch": "^2.0.0"{{/router}}{{#vuex}},
     "vuex": "^3.1.2"{{/vuex}},
     "vuex-persistedstate": "^2.7.1"
   },
