@@ -52,9 +52,13 @@ module.exports = {
     }],
     {{/if_eq}}
     // allow debugger during development
+    "semi": 0,
+    // allow debugger during development
     "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
-    "quotes": [1, "double"], // 引号类型 `` "" ""
-    "semi": 0
+    "space-before-function-paren": 0,
+    "no-undef": 1,
+    "one-var": 0,
+    "quotes": [1, "double"], // 引号类型 `` "" ''
   },
   globals: {
     App: true,
