@@ -1,0 +1,107 @@
+.wrap-flex {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  @include flex(flex-start, stretch, column);
+}
+.t-overflow {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.t-overflow-base {
+  min-width: 0;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.t-overflow-2 {
+  @extend .t-overflow-base;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+.t-overflow-3 {
+  @extend .t-overflow-base;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.full-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.clear-btn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-sizing: content-box;
+  border-radius: 0;
+  line-height: inherit;
+  font-size: inherit;
+  text-align: left;
+  &:after {
+    border: none;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.flex-sa {
+  @extend .flex;
+  justify-content: space-around;
+}
+.flex-sb {
+  @extend .flex;
+  justify-content: space-between;
+}
+.flex-sa-center {
+  @extend .flex-sa;
+  align-items: center;
+}
+.flex-sb-center {
+  @extend .flex-sb;
+  align-items: center;
+}
+.flex-center {
+  @extend .flex;
+  align-items: center;
+}
+.flex-center-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+.flex-end {
+  @extend .flex;
+  justify-content: flex-end;
+}
+
+.tag-wrap {
+  display: flex;
+  align-items: center;
+  color: #666666;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  padding: 0 20rpx;
+  border: 2rpx solid #666666;
+  border-radius: 16rpx;
+  &.actived {
+    color: #3d77fd;
+    border-color: #3d77fd;
+  }
+}

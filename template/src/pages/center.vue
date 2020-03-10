@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    index
+    center
   </div>
 </template>
 
 <script>
 export default {
   config: {
-    navigationBarTitleText: 'index'
+    navigationBarTitleText: 'center'
   },
   data() {
     return {

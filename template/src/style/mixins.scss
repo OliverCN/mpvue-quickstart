@@ -1,0 +1,14 @@
+@mixin flex($justify: center, $alignItem: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignItem;
+}
+
+@mixin txt-ellipsis($rows: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+}

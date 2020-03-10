@@ -11,10 +11,13 @@
     "lint": "eslint --ext .js,.vue src"{{/lint}}
   },
   "dependencies": {
+    "dayjs": "^1.8.21",
     "mpvue": "^2.0.0"{{#router}},
+    "qs": "^6.9.1",
     "mpvue-router-patch": "^2.0.0"{{/router}}{{#vant}},
     "vant-weapp": "^0.5.0"{{/vant}}{{#vuex}},
-    "vuex": "^3.0.0"{{/vuex}}
+    "vuex": "^3.1.2"{{/vuex}},
+    "vuex-persistedstate": "^2.7.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -59,6 +62,9 @@
     "file-loader": "^1.1.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "webpack-bundle-analyzer": "^2.13.0",
+    "sass": "^1.26.2",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
     "semver": "^5.3.0",
     "shelljs": "^0.8.0",
     "uglifyjs-webpack-plugin": "^1.2.0",

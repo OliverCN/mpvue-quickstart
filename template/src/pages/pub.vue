@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    index
+    pub
   </div>
 </template>
 
 <script>
 export default {
   config: {
-    navigationBarTitleText: 'index'
+    navigationBarTitleText: 'pub'
   },
   data() {
     return {

@@ -11,7 +11,8 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-const entry = MpvueEntry.getEntry('./src/app.json')
+// const entry = MpvueEntry.getEntry('./src/app.json')
+const entry = MpvueEntry.getEntry("src/config/mp/index.js")
 
 module.exports = {
   entry,
@@ -27,6 +28,13 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': resolve('src'),
+      _c: resolve("src/components"),
+      static: resolve("static"),
+      _utils: resolve("src/libs/utils"),
+      _libs: resolve("src/libs"),
+      _api: resolve("src/api"),
+      _config: resolve("src/config"),
+      _ext: resolve("src/extend"),
       vue: 'mpvue'
     },
     symlinks: false,
