@@ -1,13 +1,13 @@
-import qs from 'qs'
-import shareBg from '@/assets/share.png'
+import qs from "qs"
+import shareBg from "@/assets/share.png"
 /*
 * 将对象转变为style字符串，对象属性的camel命名会转换为中划线命名
 */
 export function styles(obj) {
-  let stylesStr = ''
+  let stylesStr = ""
   for (let styleName in obj) {
     if (obj.hasOwnProperty(styleName)) {
-      stylesStr += `${styleName.replace(/([A-Z])/g, '-$1').toLowerCase()}:${
+      stylesStr += `${styleName.replace(/([A-Z])/g, "-$1").toLowerCase()}:${
         obj[styleName]
       };`
     }
@@ -22,8 +22,8 @@ export const getShareInfo = opt => {
   const { route, options } = getCurrentPages()[0]
   const queryStr = qs.stringify(options)
   const argsStr = qs.stringify(args)
-  let path = `/${route}${queryStr || argsStr ? '?' : ''}${queryStr}${
-    argsStr ? '&' : ''
+  let path = `/${route}${queryStr || argsStr ? "?" : ""}${queryStr}${
+    argsStr ? "&" : ""
   }${argsStr}`
   return {
     path,
@@ -34,13 +34,13 @@ export const getShareInfo = opt => {
 // 格式化日期，如月、日、时、分、秒保证为2位数
 function formatNumber(n) {
   n = n.toString()
-  return n[1] ? n : '0' + n
+  return n[1] ? n : "0" + n
 }
 // 参数number为毫秒时间戳，format为需要转换成的日期格式
 export const formatTime = (number, format) => {
   let time = new Date(number)
   let newArr = []
-  let formatArr = ['Y', 'M', 'D', 'h', 'm', 's']
+  let formatArr = ["Y", "M", "D", "h", "m", "s"]
   newArr.push(time.getFullYear())
   newArr.push(formatNumber(time.getMonth() + 1))
   newArr.push(formatNumber(time.getDate()))
@@ -66,12 +66,12 @@ export const getShareBgPath = () => {
     fsm.writeFile({
       filePath,
       data: buffer,
-      encoding: 'binary',
+      encoding: "binary",
       success() {
         resolve(filePath)
       },
       fail() {
-        reject(new Error('ERROR_BASE64SRC_WRITE'))
+        reject(new Error("ERROR_BASE64SRC_WRITE"))
       }
     })
   })

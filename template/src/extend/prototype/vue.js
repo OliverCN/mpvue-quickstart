@@ -1,6 +1,6 @@
-import Vue from 'vue'
-import * as wxPromise from '../../libs/wx'
-// import store from '@/store'
+import Vue from "vue"
+import * as wxPromise from "../../libs/wx"
+// import store from "@/store"
 
 Vue.prototype.$wx = wxPromise
 // Vue.prototype.$store = store
@@ -11,7 +11,7 @@ Vue.prototype.$router = {
       events,
       success: function(res) {
         if (!args) return
-        res.eventChannel.emit('on-loaded', args)
+        res.eventChannel.emit("on-loaded", args)
       }
     })
   },
@@ -29,8 +29,8 @@ Vue.prototype.$router = {
   },
   goMiniPrograme: (path, args = {}) => {
     wx.navigateToMiniProgram({
-      appId: 'wxfcd5ffc1d91c93bd',
-      // appId: 'wx7cbf750722e223a0',
+      appId: "wxfcd5ffc1d91c93bd",
+      // appId: "wx7cbf750722e223a0",
       ...args,
       path
     })

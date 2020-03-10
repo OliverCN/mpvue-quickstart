@@ -1,9 +1,9 @@
-import { createOrder, unifiedOrder, pay } from '_api/pay'
+import { createOrder, unifiedOrder, pay } from "_api/pay"
 
 export default {
   data() {
     return {
-      orderNo: ''
+      orderNo: ""
     }
   },
   methods: {

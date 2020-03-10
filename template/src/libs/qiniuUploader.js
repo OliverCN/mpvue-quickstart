@@ -1,10 +1,10 @@
 // created by gpake
 ;(function() {
   var config = {
-    qiniuRegion: '',
-    qiniuImageURLPrefix: '',
-    qiniuUploadToken: '',
-    qiniuUploadTokenURL: '',
+    qiniuRegion: "",
+    qiniuImageURLPrefix: "",
+    qiniuUploadToken: "",
+    qiniuUploadTokenURL: "",
     qiniuUploadTokenFunction: null,
     qiniuShouldUseQiniuFileName: false
   }
@@ -18,10 +18,10 @@
   // 如果需要变更参数，再调用 init 即可
   function init(options) {
     config = {
-      qiniuRegion: '',
-      qiniuImageURLPrefix: '',
-      qiniuUploadToken: '',
-      qiniuUploadTokenURL: '',
+      qiniuRegion: "",
+      qiniuImageURLPrefix: "",
+      qiniuUploadToken: "",
+      qiniuUploadTokenURL: "",
       qiniuUploadTokenFunction: null,
       qiniuShouldUseQiniuFileName: false
     }
@@ -32,7 +32,7 @@
     if (options.region) {
       config.qiniuRegion = options.region
     } else {
-      console.error('qiniu uploader need your bucket region')
+      console.error("qiniu uploader need your bucket region")
     }
     if (options.uptoken) {
       config.qiniuUploadToken = options.uptoken
@@ -58,7 +58,7 @@
     complete
   ) {
     if (filePath == null) {
-      console.error('qiniu uploader need filePath to upload')
+      console.error("qiniu uploader need filePath to upload")
       return
     }
     if (options) {
@@ -95,7 +95,7 @@
         config.qiniuUploadToken.length > 0
       ) {
         console.error(
-          'qiniu UploadTokenFunction result is null, please check the return value'
+          "qiniu UploadTokenFunction result is null, please check the return value"
         )
         return
       }
@@ -111,7 +111,7 @@
       )
     } else {
       console.error(
-        'qiniu uploader need one of [uptoken, uptokenURL, uptokenFunc]'
+        "qiniu uploader need one of [uptoken, uptokenURL, uptokenFunc]"
       )
     }
   }
@@ -128,12 +128,12 @@
   ) {
     if (config.qiniuUploadToken == null && config.qiniuUploadToken.length > 0) {
       console.error(
-        'qiniu UploadToken is null, please check the init config or networking'
+        "qiniu UploadToken is null, please check the init config or networking"
       )
       return
     }
     var url = uploadURLFromRegionCode(config.qiniuRegion)
-    var fileName = filePath.split('//')[1]
+    var fileName = filePath.split("//")[1]
     if (options && options.key) {
       fileName = options.key
     }
@@ -141,24 +141,24 @@
       token: config.qiniuUploadToken
     }
     if (!config.qiniuShouldUseQiniuFileName) {
-      formData['key'] = fileName
+      formData["key"] = fileName
     }
     before && before()
     var uploadTask = wx.uploadFile({
       url: url,
       filePath: filePath,
-      name: 'file',
+      name: "file",
       formData: formData,
       success: function(res) {
         var dataString = res.data
         //   // this if case is a compatibility with wechat server returned a charcode, but was fixed
-        //   if(res.data.hasOwnProperty('type') && res.data.type === 'Buffer'){
+        //   if(res.data.hasOwnProperty("type") && res.data.type === "Buffer"){
         //     dataString = String.fromCharCode.apply(null, res.data.data)
         //   }
         try {
           var dataObject = JSON.parse(dataString)
           // do something
-          var fileUrl = config.qiniuImageURLPrefix + '/' + dataObject.key
+          var fileUrl = config.qiniuImageURLPrefix + "/" + dataObject.key
           dataObject.fileUrl = fileUrl
           dataObject.imageURL = fileUrl
           console.log(dataObject)
@@ -166,7 +166,7 @@
             success(dataObject)
           }
         } catch (e) {
-          console.log('parse JSON failed, origin String is: ' + dataString)
+          console.log("parse JSON failed, origin String is: " + dataString)
           if (fail) {
             fail(e)
           }
@@ -205,13 +205,13 @@
           }
         } else {
           console.error(
-            'qiniuUploader cannot get your token, please check the uptokenURL or server'
+            "qiniuUploader cannot get your token, please check the uptokenURL or server"
           )
         }
       },
       fail: function(error) {
         console.error(
-          'qiniu UploadToken is null, please check the init config or networking: ' +
+          "qiniu UploadToken is null, please check the init config or networking: " +
             error
         )
       }
@@ -221,24 +221,24 @@
   function uploadURLFromRegionCode(code) {
     var uploadURL = null
     switch (code) {
-      case 'ECN':
-        uploadURL = 'https://up.qiniup.com'
+      case "ECN":
+        uploadURL = "https://up.qiniup.com"
         break
-      case 'NCN':
-        uploadURL = 'https://up-z1.qiniup.com'
+      case "NCN":
+        uploadURL = "https://up-z1.qiniup.com"
         break
-      case 'SCN':
-        uploadURL = 'https://up-z2.qiniup.com'
+      case "SCN":
+        uploadURL = "https://up-z2.qiniup.com"
         break
-      case 'NA':
-        uploadURL = 'https://up-na0.qiniup.com'
+      case "NA":
+        uploadURL = "https://up-na0.qiniup.com"
         break
-      case 'ASG':
-        uploadURL = 'https://up-as0.qiniup.com'
+      case "ASG":
+        uploadURL = "https://up-as0.qiniup.com"
         break
       default:
         console.error(
-          'please make the region is with one of [ECN, SCN, NCN, NA, ASG]'
+          "please make the region is with one of [ECN, SCN, NCN, NA, ASG]"
         )
     }
     return uploadURL

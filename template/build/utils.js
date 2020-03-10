@@ -2,14 +2,15 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('../config')
 
-exports.assetsPath = function (_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+exports.assetsPath = function(_path) {
+  const assetsSubDirectory =
+    process.env.NODE_ENV === 'production'
+      ? config.build.assetsSubDirectory
+      : config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
 }
 
-exports.cssLoaders = function (options) {
+exports.cssLoaders = function(options) {
   options = options || {}
 
   const cssLoader = {
@@ -35,7 +36,7 @@ exports.cssLoaders = function (options) {
     }
   }
 
-  const scssResourceLoader = {
+  var scssResourceLoader = {
     loader: 'sass-resources-loader',
     options: {
       resources: [
@@ -46,7 +47,7 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions, anotherLoader) {
     const loaders = [cssLoader, px2rpxLoader, postcssLoader]
     if (loader) {
       loaders.push({
@@ -56,6 +57,7 @@ exports.cssLoaders = function (options) {
         })
       })
     }
+    if (anotherLoader) loaders.push(anotherLoader)
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
@@ -83,7 +85,7 @@ exports.cssLoaders = function (options) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
-exports.styleLoaders = function (options) {
+exports.styleLoaders = function(options) {
   const output = []
   const loaders = exports.cssLoaders(options)
   for (const extension in loaders) {

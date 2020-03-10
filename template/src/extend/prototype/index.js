@@ -1,4 +1,4 @@
-require('./array')
-require('./string')
-require('./object')
-require('./vue')
+require("./array")
+require("./string")
+require("./object")
+require("./vue")

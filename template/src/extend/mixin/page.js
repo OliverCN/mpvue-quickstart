@@ -25,7 +25,7 @@ export default {
     // 绑给scroll-view的方法
     async preLoadMore() {
       if (this.isLoading || this.noMore) return
-      if (!this.loadMore || typeof this.loadMore !== 'function') return
+      if (!this.loadMore || typeof this.loadMore !== "function") return
       this.isLoading = true
       /*
        页面中定义一个名为loadMore的方法，该方法一定要返回当前页的数据列表，切为async-await

@@ -3,8 +3,8 @@
  * 把对象序列化成字符串
  */
 // Object.prototype.stringify = function() {
-//   if (Object.prototype.toString(this) !== '[object Object]') return ''
-//   let str = ''
+//   if (Object.prototype.toString(this) !== "[object Object]") return ""
+//   let str = ""
 //   for (let key in this) {
 //     str += `${key}=${this[key]}&`
 //   }
@@ -19,7 +19,7 @@
 //   if (this == null) return null
 //   if (this instanceof Date) return new Date(this)
 //   if (this instanceof RegExp) return new RegExp(this)
-//   if (typeof this !== 'object') return this
+//   if (typeof this !== "object") return this
 //   let t = new this.constructor()
 //   for (let key in this) {
 //     t[key] = this.deepClone(this[key])

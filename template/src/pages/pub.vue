@@ -7,7 +7,7 @@
 <script>
 export default {
   config: {
-    navigationBarTitleText: 'pub'
+    navigationBarTitleText: "pub"
   },
   data() {
     return {

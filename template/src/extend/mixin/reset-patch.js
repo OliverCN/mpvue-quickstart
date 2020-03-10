@@ -4,7 +4,7 @@ export default {
   install (_Vue) {
     // 添加全局方法或属性
     _Vue.prototype.$isPage = function isPage () {
-      return this.$mp && this.$mp.mpType === 'page'
+      return this.$mp && this.$mp.mpType === "page"
     }
 
     _Vue.prototype.$pageId = function pageId () {

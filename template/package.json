@@ -25,9 +25,10 @@
     "mpvue-loader": "^2.0.0",
     "mpvue-template-compiler": "^2.0.0",
     "mpvue-webpack-target": "^1.0.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^2.1.0",
     "postcss-mpvue-wxss": "^1.0.0",
-    "prettier": "~1.12.0",
+    "prettier": "^1.19.1",
     "px2rpx-loader": "^0.1.0",
     {{#lint}}
     "babel-eslint": "^8.2.0",

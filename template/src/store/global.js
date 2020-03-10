@@ -3,7 +3,7 @@ export default {
       sysInfo: {
         statusBarHeight: 0,
         navigationHeight: 0,
-        fontSizeSetting: '16px',
+        fontSizeSetting: "16px",
         tabBarHeight: 0,
         screenHeight: 0,
         windowHeight: 0
@@ -12,16 +12,16 @@ export default {
       toUserInfo: {},
       // 当前用户信息
       userInfo: {
-        id: '',
-        name: '',
-        phone: '',
+        id: "",
+        name: "",
+        phone: "",
         // 用户类型 0-游客 1-超管 2-销售
         type: 0,
-        openId: '',
+        openId: "",
         isWeChat: 0,
         im: {
-          userID: '',
-          userSig: ''
+          userID: "",
+          userSig: ""
         }
       },
       // 会话列表
@@ -40,7 +40,7 @@ export default {
           navigationHeight,
           windowHeight,
           screenHeight,
-          fontSizeSetting: fontSizeSetting + 'px'
+          fontSizeSetting: fontSizeSetting + "px"
         }
       },
       // setScreenHeight: (state, sHeight) => {

@@ -72,7 +72,7 @@ export const openSetting = scopeName => {
  * @param {String} type wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
  * @param {Boolean} altitude 传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度
  */
-export const getLocation = (type = 'wgs84', altitude = false) => {
+export const getLocation = (type = "wgs84", altitude = false) => {
   return new Promise((resolve, reject) => {
     wx.getLocation({
       altitude,
@@ -133,7 +133,7 @@ export const getUserInfo = () => {
     checkSession().then(() => {
       wx.getUserInfo({
         withCredentials: true,
-        lang: 'zh_CN',
+        lang: "zh_CN",
         success: resolve,
         fail: reject
       })
@@ -155,8 +155,8 @@ export const previewImage = arg => {
  */
 export const chooseImage = ({
   count = 1,
-  sizeType = ['original', 'compressed'],
-  sourceType = ['album', 'camera']
+  sizeType = ["original", "compressed"],
+  sourceType = ["album", "camera"]
 }) => {
   return new Promise((resolve, reject) => {
     wx.chooseImage({
@@ -190,7 +190,7 @@ export const makePhoneCall = phone => {
 export const showToast = args => {
   return new Promise((resolve, reject) => {
     wx.showToast({
-      icon: 'none',
+      icon: "none",
       ...args,
       success: () => {
         let duration = args.duration || 1500
@@ -216,7 +216,7 @@ export const hideToast = () => {
  * @param {String} msg 提示信息
  * @param {Number} duration 显示时间
  */
-export const toast = (msg = '', duration = 1500) => {
+export const toast = (msg = "", duration = 1500) => {
   return showToast({ title: msg, duration })
 }
 
@@ -225,22 +225,22 @@ export const toast = (msg = '', duration = 1500) => {
  * @param {String} msg 提示信息
  * @param {Number} duration 显示时间
  */
-export const succss = (msg = '', duration = 1500) => {
-  return showToast({ title: msg, icon: 'success', duration })
+export const succss = (msg = "", duration = 1500) => {
+  return showToast({ title: msg, icon: "success", duration })
 }
 
 export const alert = (msg, options = {}) => {
   return new Promise((resolve, reject) => {
     wx.showModal({
       ...options,
-      title: options.title || '',
+      title: options.title || "",
       content: msg,
       showCancel: false,
       success(res) {
         if (res.confirm) {
-          resolve('confirm')
+          resolve("confirm")
         } else if (res.cancel) {
-          resolve('cancel')
+          resolve("cancel")
         }
       }
     })
@@ -249,16 +249,16 @@ export const alert = (msg, options = {}) => {
 export const confirm = (msg, options = {}) => {
   return new Promise((resolve, reject) => {
     wx.showModal({
-      confirmColor: '#DF5858',
+      confirmColor: "#DF5858",
       ...options,
-      title: options.title || '',
+      title: options.title || "",
       content: msg,
       success(res) {
         resolve(res.confirm)
         // if (res.confirm) {
-        //   resolve('confirm')
+        //   resolve("confirm")
         // } else if (res.cancel) {
-        //   resolve('cancel')
+        //   resolve("cancel")
         // }
       }
     })
@@ -270,7 +270,7 @@ export const confirm = (msg, options = {}) => {
  * @param {String} msg 提示信息
  * @param {Number} duration 显示时间
  */
-export const showLoading = (msg = '加载中') => {
+export const showLoading = (msg = "加载中") => {
   return new Promise((resolve, reject) => {
     wx.showLoading({
       title: msg,
@@ -348,9 +348,9 @@ export const getToday = () => {
   const now = new Date()
   const year = now.getFullYear()
   let month = now.getMonth() + 1
-  month = month < 10 ? '0' + month : month
+  month = month < 10 ? "0" + month : month
   let day = now.getDate()
-  day = day < 10 ? '0' + day : day
+  day = day < 10 ? "0" + day : day
   return `${year}-${month}-${day}`
 }
 /**
@@ -399,7 +399,7 @@ export const base64Src = base64data => {
     const [, format, bodyData] =
       /data:image\/(\w+);base64,(.*)/.exec(base64data) || []
     if (!format) {
-      reject(new Error('ERROR_BASE64SRC_PARSE'))
+      reject(new Error("ERROR_BASE64SRC_PARSE"))
     }
     const filePath = `${wx.env.USER_DATA_PATH}/${bodyData.substr(
       32,
@@ -409,12 +409,12 @@ export const base64Src = base64data => {
     fsm.writeFile({
       filePath,
       data: buffer,
-      encoding: 'binary',
+      encoding: "binary",
       success() {
         resolve(filePath)
       },
       fail() {
-        reject(new Error('ERROR_BASE64SRC_WRITE'))
+        reject(new Error("ERROR_BASE64SRC_WRITE"))
       }
     })
   })

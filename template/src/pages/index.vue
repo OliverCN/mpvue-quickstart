@@ -7,7 +7,7 @@
 <script>
 export default {
   config: {
-    navigationBarTitleText: 'index'
+    navigationBarTitleText: "index"
   },
   data() {
     return {

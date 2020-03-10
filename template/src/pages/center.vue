@@ -7,7 +7,7 @@
 <script>
 export default {
   config: {
-    navigationBarTitleText: 'center'
+    navigationBarTitleText: "center"
   },
   data() {
     return {

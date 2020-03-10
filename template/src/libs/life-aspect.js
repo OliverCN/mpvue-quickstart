@@ -2,7 +2,7 @@
  * 面向切面式的拦截生命周期函数
  */
 
-import bus from '_bus'
+import bus from "_bus"
 
 const init = App => {
   // 存储相同页面的页面栈，用于解决页面多次打开数据不正确的问题
@@ -34,9 +34,9 @@ const init = App => {
       //     query
       //   } = this.$mp
       //   let qs = queryToString(query)
-      //   let returnUrl = qs ? `/${route}?${qs}` : '/' + route
+      //   let returnUrl = qs ? `/${route}?${qs}` : "/" + route
       //   wx.reLaunch({
-      //     url: '/pages/login/index?returnUrl=' + encodeURIComponent(returnUrl)
+      //     url: "/pages/login/index?returnUrl=" + encodeURIComponent(returnUrl)
       //   })
       //   return false
       // }
@@ -73,7 +73,7 @@ const init = App => {
       // 用于用户自定义的全局生命周期函数，用于页面跳转传递数据和方法调用
       bus.trigger(this, life)
       // 如果是销毁，初始化数据，清空观察者
-      if (life === 'onUnload') {
+      if (life === "onUnload") {
         // 初始化数据，避免下次进入页面出现数据还是老数据
         if (this.$options.data) {
           Object.assign(this.$data, this.$options.data())
