@@ -71,6 +71,11 @@ module.exports = {
         ]
       },
       {
+        test: /\.vue$/,
+        loader: "mpvue-config-loader",
+        exclude: [resolve("src/components")]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
